@@ -386,6 +386,13 @@ module Cerner
                 "reference": "https://fhir-ehr.cerner.com/dstu2/OperationDefinition/binary-autogen-ccd-if",
                 "display": "Generate Continuity of Care Document (CCD)"
               }
+            },
+            {
+              "name": "docref",
+              "definition": {
+                "reference": "http://fhir.org/guides/argonaut/OperationDefinition/docref",
+                "display": "Argonaut Get DocumentReferences"
+              }
             }
           ]
         }
@@ -827,6 +834,13 @@ module Cerner
               "definition": {
                 "reference": "https://fhir-ehr.cerner.com/dstu2/OperationDefinition/binary-autogen-ccd-if",
                 "display": "Generate Continuity of Care Document (CCD)"
+              }
+            },
+            {
+              "name": "docref",
+              "definition": {
+                "reference": "http://fhir.org/guides/argonaut/OperationDefinition/docref",
+                "display": "Argonaut Get DocumentReferences"
               }
             }
           ]
