@@ -11,7 +11,7 @@ module Cerner
       "name": "Cerner Conformance Statement",
       "status": "draft",
       "publisher": "Cerner",
-      "date": "2016-11-28",
+      "date": "2017-01-17",
       "description": "Describes capabilities of this server",
       "kind": "instance",
       "fhirVersion": "1.0.2",
@@ -378,6 +378,15 @@ module Cerner
                 }
               ]
             }
+          ],
+          "operation": [
+            {
+              "name": "autogen-ccd-if",
+              "definition": {
+                "reference": "https://fhir-ehr.cerner.com/dstu2/OperationDefinition/binary-autogen-ccd-if",
+                "display": "Generate Continuity of Care Document (CCD)"
+              }
+            }
           ]
         }
       ]
@@ -393,7 +402,7 @@ module Cerner
       "name": "Cerner Conformance Statement",
       "status": "draft",
       "publisher": "Cerner",
-      "date": "2016-11-28",
+      "date": "2017-01-17",
       "description": "Describes capabilities of this server",
       "kind": "instance",
       "fhirVersion": "1.0.2",
@@ -810,6 +819,15 @@ module Cerner
                   "documentation": "A person identifier. It is a required field if no _id field is given"
                 }
               ]
+            }
+          ],
+          "operation": [
+            {
+              "name": "autogen-ccd-if",
+              "definition": {
+                "reference": "https://fhir-ehr.cerner.com/dstu2/OperationDefinition/binary-autogen-ccd-if",
+                "display": "Generate Continuity of Care Document (CCD)"
+              }
             }
           ]
         }
