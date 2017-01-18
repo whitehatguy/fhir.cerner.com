@@ -316,6 +316,14 @@ module Cerner
               ]
             },
             {
+              "type": "OperationDefinition",
+              "interaction": [
+                {
+                  "code": "read"
+                }
+              ]
+            },
+            {
               "type": "Patient",
               "interaction": [
                 {
@@ -761,6 +769,14 @@ module Cerner
                   "name": "_count",
                   "type": "number",
                   "documentation": "The maximum number of results to return in a page."
+                }
+              ]
+            },
+            {
+              "type": "OperationDefinition",
+              "interaction": [
+                {
+                  "code": "read"
                 }
               ]
             },
