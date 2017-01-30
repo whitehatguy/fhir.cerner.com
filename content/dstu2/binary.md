@@ -36,7 +36,7 @@ Retrieving the Binary resource with its native mime type
 <%= headers 200, 'Content-Type': 'text/html' %>
 <%= html(:dstu2_binary_html) %>
 
-## Operation autogen-ccd-if
+## Operation: autogen-ccd-if
 
 Generates the Continuity of Care Document (CCD) as a Binary for the supplied query parameters: 
 
@@ -51,14 +51,14 @@ _Implementation Notes_
 
  Name     | Required? | Type          | Description
 ----------|-----------|---------------|-------------------------------------------------
-`patient` | Yes       | [`reference`] | A reference to the patient that is the subject of the CCD required. Example: `14067892`
+`patient` | Yes       | [`reference`] | A reference to the patient that is the subject of the CCD. Example: `14067892`
 `start`   | No        | [`date`]      | The start of the date range for which the CCD is to be generated. If not provided, then all records upto the end or current date are considered. Example: `2014-09-24T12:00:00.000Z`
 `end`     | No        | [`date`]      | The end of the date range for which the CCD is to be generated. If not provided, then all records upto the current date are considered. Example: `2016-09-24T12:00:00.000Z`
 
 Notes:   
 
 - The `start` and `end` parameters:  
-  - must be a valid [dateTime] with a time and either no or the `eq` prefix.
+  - must be a valid [dateTime] with a time and prefixed with either `eq` or nothing.
 
 ### Response
 

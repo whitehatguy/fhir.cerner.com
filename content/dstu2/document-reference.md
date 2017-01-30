@@ -110,11 +110,15 @@ present.
    x-xss-protection → 1; mode=block
 </pre>
 
-## Operation docref
+## Operation: docref
 
 Argonaut operation for querying DocumentReferences for the supplied parameters:
 
     GET /DocumentReference/$docref?:parameters
+
+_Implementation Notes_
+
+* The [DocumentReference.relatesTo] modifier element is not supported and will not be returned.
 
 ### Terminology Bindings
 
@@ -135,7 +139,7 @@ Notes:
   - must include both a system and a code. (e.g. `&type=http://loinc.org|34133-9`)
 
 - The `start` and `end` parameters:  
-  - must be a valid [dateTime] with a time and either no or the `eq` prefix.
+  - must be a valid [dateTime] with a time and prefixed with either `eq` or nothing.
 
 ### Response
 
@@ -150,3 +154,4 @@ Notes:
 [`token`]: http://hl7.org/fhir/DSTU2/search.html#token
 [`date`]: http://hl7.org/fhir/DSTU2/search.html#date
 [dateTime]: http://hl7.org/fhir/DSTU2/datatypes.html#dateTime
+[DocumentReference.relatesTo]: http://hl7.org/fhir/DSTU2/documentreference-definitions.html#DocumentReference.relatesTo
