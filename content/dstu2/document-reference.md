@@ -128,18 +128,15 @@ _Implementation Notes_
 
  Name     | Required? | Type          | Description
 ----------|-----------|---------------|-------------------------------------------------
-`patient` | Yes       | [`reference`] | A reference to the patient whose document references are required. Example: `14067892`
-`type`    | Yes       | [`token`]     | The document reference type, can be a list of comma separated values. Example: `http://loinc.org|34133-9`
-`start`   | No        | [`date`]      | The start of the date range form which document reference records are required. If not provided, then all records upto the end or current date are considered. Example: `2014-09-24T12:00:00.000Z`
-`end`     | No        | [`date`]      | The end of the date range till which document reference records are required. If not provided, then all records upto the current date are considered. Example: `2016-09-24T12:00:00.000Z`
+`patient` | Y         | [`reference`] | A reference to the patient whose document references are required. Example: `14067892`
+`type`    | Y         | [`token`]     | The document reference type, can be a list of comma separated values. Example: `http://loinc.org|34133-9`
+`start`   | N         | [`date`]      | The start of the date range from which document reference records should be included. If not provided, then all records from the beginning of time are included. Example: `2014-09-24T12:00:00.000Z`
+`end`     | N         | [`date`]      | The end of the date range till which document reference records should be included. If not provided, then all records up to the current date are included. Example: `2016-09-24T12:00:00.000Z`
 
 Notes:   
 
-- The `type` parameter:
-  - must include both a system and a code. (e.g. `&type=http://loinc.org|34133-9`)
-
-- The `start` and `end` parameters:  
-  - must be a valid [dateTime] with a time and prefixed with either `eq` or nothing.
+- The `type` parameter must include both a system and a code. (e.g. `&type=http://loinc.org|34133-9`)
+- The `start` and `end` parameters must be valid [dateTime]s with a time component. They must have prefixes of `eq` or nothing.
 
 ### Response
 

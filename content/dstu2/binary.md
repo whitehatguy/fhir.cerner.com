@@ -51,18 +51,17 @@ _Implementation Notes_
 
  Name     | Required? | Type          | Description
 ----------|-----------|---------------|-------------------------------------------------
-`patient` | Yes       | [`reference`] | A reference to the patient that is the subject of the CCD. Example: `14067892`
-`start`   | No        | [`date`]      | The start of the date range for which the CCD is to be generated. If not provided, then all records upto the end or current date are considered. Example: `2014-09-24T12:00:00.000Z`
-`end`     | No        | [`date`]      | The end of the date range for which the CCD is to be generated. If not provided, then all records upto the current date are considered. Example: `2016-09-24T12:00:00.000Z`
+`patient` | Y         | [`reference`] | A reference to the patient that is the subject of the CCD. Example: `14067892`
+`start`   | N         | [`date`]      | The start of the date range for which the CCD is to be generated. If not provided, then all records from the beginning of time are included. Example: `2014-09-24T12:00:00.000Z`
+`end`     | N         | [`date`]      | The end of the date range for which the CCD is to be generated. If not provided, then all records up to the current date are included. Example: `2016-09-24T12:00:00.000Z`
 
 Notes:   
 
-- The `start` and `end` parameters:  
-  - must be a valid [dateTime] with a time and prefixed with either `eq` or nothing.
+- The `start` and `end` parameters must be valid [dateTime]s with a time component. They must have prefixes of `eq` or nothing.
 
 ### Response
 
-Retrieving the resource with the JSON mime type
+Generating the Continuity of Care Document with the JSON mime type
 
     GET: [...]/Binary/$autogen-ccd-if?patient=1316024
     Accept: application/json+fhir
@@ -70,7 +69,7 @@ Retrieving the resource with the JSON mime type
 <%= headers 200, 'Content-Type': 'application/json+fhir' %>
 <%= json(:dstu2_binary_ccd_json_entry) %>
 
-Retrieving the Binary resource with its native mime type
+Generating the Continuity of Care Document with its native mime type
 
     GET: [...]/Binary/$autogen-ccd-if?patient=1316024
     Accept: application/xml
