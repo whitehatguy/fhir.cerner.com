@@ -406,6 +406,83 @@ module Cerner
       ]
     }
 
+    DSTU2_MEDICATION_STATEMENT_ENTRY ||= {
+      "resourceType": "MedicationStatement",
+      "id": "21369961",
+      "meta": {
+        "versionId": "4-0",
+        "lastUpdated": "2017-01-12T13:21:42.000-06:00"
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div><p><b>Medication Statement</b></p><p><b>Patient Name</b>: Song, River</p><p><b>Medication Name</b>: aspirin (aspirin 81 mg oral tablet)</p><p><b>Dosage Instructions</b>: 1 - 2 tabs, Oral, BID, PRN: pain | Take 1 - 2 tabs twice per day as needed, 1 Refill(s)</p><p><b>Status</b>: Entered in Error</p></div>"
+      },
+      "patient": {
+        "reference": "Patient/4342008",
+        "display": "Song, River"
+      },
+      "dateAsserted": "2017-01-12T13:21:42.000-06:00",
+      "status": "entered-in-error",
+      "effectiveDateTime": "2017-01-12T13:21:42.000-06:00",
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "243670",
+            "display": "Aspirin 81 MG Oral Tablet",
+            "userSelected": false
+          }
+        ],
+        "text": "aspirin (aspirin 81 mg oral tablet)"
+      },
+      "dosage": [
+        {
+          "text": "1 - 2 tabs, Oral, BID, PRN: pain | Take 1 - 2 tabs twice per day as needed, 1 Refill(s)",
+          "_text": {
+            "extension": [
+              {
+                "url": "https://fhir-ehr.cerner.com/dstu2/StructureDefinition/patient-friendly-display",
+                "valueString": "1 - 2 tabs Oral 2 times a day as needed pain | Take 1 - 2 tabs twice per day as needed."
+              }
+            ]
+          },
+          "timing": {
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2016-06-24T08:08:00.000-07:00",
+                "end": "2017-01-12T07:48:57.000-08:00"
+              }
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v3/GTSAbbreviation",
+                  "code": "BID",
+                  "display": "BID",
+                  "userSelected": false
+                }
+              ],
+              "text": "BID"
+            }
+          },
+          "asNeededCodeableConcept": {
+            "text": "pain | Take 1 - 2 tabs twice per day as needed"
+          },
+          "route": {
+            "coding": [
+              {
+                "system": "http://ncimeta.nci.nih.gov",
+                "code": "C38288",
+                "display": "ORAL",
+                "userSelected": false
+              }
+            ],
+            "text": "Oral"
+          }
+        }
+      ]
+    }
+
     DSTU2_MEDICATION_STATEMENT_CREATE ||= {
       "resourceType": "MedicationStatement",
       "contained":
@@ -471,6 +548,6 @@ module Cerner
         "reference": "#123"
       }
     }
-        
+
   end
 end
